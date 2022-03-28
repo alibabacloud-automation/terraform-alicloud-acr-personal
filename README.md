@@ -12,10 +12,12 @@ Create a Domain, Receivers and tags.
 ```hcl
 module "example" {
   source             = "terraform-alicloud-modules/acr-personal/alicloud"
+  create_namespace   = true
   namespace_name     = "your_namespace_name"
   auto_create        = "true"
   default_visibility = "PUBLIC"
 
+  create_repo  = true
   repo_name    = "repo_name"
   repo_summary = "repo_summary"
   repo_type    = "PUBLIC"
