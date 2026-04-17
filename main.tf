@@ -1,5 +1,5 @@
 locals {
-  namespace_name = var.namespace_name != "" ? var.namespace_name : concat(alicloud_cr_namespace.namespace.*.name, [""])[0]
+  namespace_name = var.namespace_name != "" ? var.namespace_name : concat(alicloud_cr_namespace.namespace[*].name, [""])[0]
 }
 
 resource "alicloud_cr_namespace" "namespace" {
